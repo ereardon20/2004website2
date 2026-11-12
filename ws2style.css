@@ -1,0 +1,277 @@
+@property --sky-top {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #0f0c29;
+}
+
+@property --sky-middle {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #1f1a4a;
+}
+
+@property --sky-bottom {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #3a2e6b;
+}
+
+* {
+    text-align: center;
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 25px;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 45px;
+    color: white;
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background: linear-gradient(to bottom, #0f0c29, #1f1a4a, #3a2e6b);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(to bottom, var(--sky-top), var(--sky-middle), var(--sky-bottom));
+    background-attachment: fixed;
+    transition: --sky-top 1.5s ease, --sky-middle 1.5s ease, --sky-bottom 1.5s ease;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+header h2 {
+    margin-top: 0.5rem;
+}
+
+button {
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    color: #2a1250;
+    background-color: #ffd27a;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    background-color: var(--accent, #ffd27a);
+}
+
+button:hover {
+    background-color: #ffb547;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+input {
+    font-family: "Karla", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 999px;
+    color: #2a1250;
+    background-color: white;
+    width: 320px;
+    outline: none;
+    box-shadow: 0 0 0 0 rgba(255, 210, 122, 0);
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 210, 122, 0.6), 0 0 20px rgba(255, 210, 122, 0.5);
+}
+
+input::placeholder {
+    color: #9a8aa8;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+#output {
+    width: 100%;
+    max-width: 760px;
+    padding: 3rem;
+    margin-top: 2rem;
+    border-radius: 1.5rem;
+    background-color: rgba(30, 10, 50, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#when {
+    font-size: 20px;
+    color: #ffd27a;
+}
+
+#place-name {
+    font-family: "Abril Fatface", serif;
+    font-size: 44px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+#score {
+    font-size: 96px;
+    opacity: 0.85;
+}
+
+#score-number {
+    font-family: "Abril Fatface", serif;
+    font-size: 140px;
+    line-height: 1;
+    color: #ffd27a;
+}
+
+.verdict {
+    font-size: 28px;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.times {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.times li {
+    flex: 1;
+    padding: 0.9rem 0.5rem;
+    border-radius: 1rem;
+    background-color: rgba(202, 180, 58, 0.12);
+}
+
+.times span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.times strong {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+#output h3 {
+    font-size: 30px;
+    color: #ffd27a;
+    margin-bottom: 0.5rem;
+}
+
+.clouds-list li {
+    font-size: 25px;
+    padding: 0.3rem 0;
+}
+
+.score-bar {
+    width: 70%;
+    height: 14px;
+    margin: 0.75rem auto 0;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.score-fill {
+    width: var(--score, 0%);
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff7a59, #ffd27a);
+    transition: width 1.2s ease;
+}
+
+.how-score summary, .how-score p{
+    font-size: 20px;
+}
+
+.how-score summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #f5d48a;
+}
+
+footer p{
+    margin-top: 2rem;
+    font-size: 20px;
+    color: #a8a2ac;
+}
+
+footer a{
+    margin-top: 2rem;
+    font-size: 20px;
+    color: #a8a2ac;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    padding: 0;
+    margin: 0;
+}
+
+body.mood-poor{
+    --sky-top: #2b2d3a;
+    --sky-middle: #4a4f5e;
+    --sky-bottom: #6b6f7a;
+}
+
+body.mood-fair{
+    --sky-top: #4A5578;
+    --sky-middle: #747DA6;
+    --sky-bottom: #9485A1;
+}
+
+body.mood-okay{
+    --sky-top: #8A74A0;
+    --sky-middle: #A1738B;
+    --sky-bottom: #C9A375;
+}
+
+body.mood-okay{
+    --sky-top: #8A74A0;
+    --sky-middle: #A1738B;
+    --sky-bottom: #C9A375;
+}
+
+body.mood-great {
+    --sky-top: #4b1c94;
+    --sky-middle: #9b3f9c;
+    --sky-bottom: #e8bf55;
+}
+
+body.mood-perfect {
+    --sky-top: #2a0a5e;
+    --sky-middle: #e0306f;
+    --sky-bottom: #ffb22e;
+}

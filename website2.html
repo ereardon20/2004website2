@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Hour Hunter</title>
+    <link rel="stylesheet" href="ws2style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla:ital,wght@0,200..800;1,200..800"
+        rel="stylesheet">
+    <script src="ws2script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Golden Hour Hunter</h1>
+        <h2>Tonight's sunset, scored!</h2>
+    </header>
+
+    <main>
+        <section id="controls">
+            <button type="button" id="location-btn" class="button">
+                Use My Location
+            </button>
+
+            <p class="or">or</p>
+
+
+            <form id="location-search-form" class="search-row">
+                <label for="city-input" class="visually-hidden">City name</label>
+                <input type="text" id="city-input" placeholder="Enter a city name...">
+                <button type="submit" class="button">Search</button>
+            </form>
+            <p id="message" class="message"></p>
+        </section>
+
+        <section id="output" hidden>
+            <p id="when"></p>
+            <h2 id="place-name"></h2>
+            <p id="score"><span id="score-number">0</span>/100</p>
+            <div class="score-bar">
+                <div id="score-fill" class="score-fill"></div>
+            </div>
+            <p id="verdict" class="verdict"></p>
+
+            <ul class="times">
+                <li>
+                    <span>Golden hour</span>
+                    <strong id="golden-time"></strong>
+                </li>
+
+                <li>
+                    <span>Sunset</span>
+                    <strong id="sunset-time"></strong>
+                </li>
+
+                <li>
+                    <span>Blue hour ends</span>
+                    <strong id="blue-time"></strong>
+                </li>
+            </ul>
+
+            <h3>Weather at Sunset:</h3>
+            <ul id="clouds-list" class="clouds-list"></ul>
+            <br>
+            <br>
+            <details class="how-score">
+                <summary>How does scoring work?</summary>
+                <p>Every sunset starts with a score of 30. High and mid clouds catch the sunset's color. About 50%
+                    coverage
+                    is ideal; too few clouds will be plain, too many clouds will just be gray. With this, we calculate
+                    the
+                    canvas quality, which can receive a score as high as 70. If there are low clouds or rain, points are
+                    subtracted from the total score.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Weather from <a href="https://open-meteo.com/">Open-Meteo</a> ·
+            Sun times from <a href="https://sunrise-sunset.org/api">Sunrise-Sunset.org</a> ·
+            City search from the CSE 2004 geocode API
+        </p>
+    </footer>
+</body>
+
+</html>
